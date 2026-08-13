@@ -7,5 +7,25 @@ pipeline {
                 echo 'Hello'
             }
         }
+
+        stage('pwd') {
+            steps {
+                sh 'pwd'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished'
+        }
+
+        success {
+            echo 'Pipeline succeeded!'
+        }
+
+        failure {
+            echo 'Pipeline failed!'
+        }
     }
 }
